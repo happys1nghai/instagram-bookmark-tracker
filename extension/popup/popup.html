@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Bookmark Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>📌 IG Bookmarks</h1>
+      <div id="server-status" class="status-indicator" title="Server status"></div>
+    </header>
+
+    <!-- Current Post Section -->
+    <section id="current-post-section" class="section">
+      <div id="post-status" class="post-status">
+        <p class="placeholder-text">Navigate to an Instagram post to bookmark it</p>
+      </div>
+      <button id="save-btn" class="btn btn-primary" disabled>
+        💾 Save Post
+      </button>
+    </section>
+
+    <!-- Bookmarks List Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Saved Bookmarks</h2>
+        <button id="refresh-btn" class="btn btn-icon" title="Refresh list">🔄</button>
+      </div>
+      
+      <div id="bookmarks-container">
+        <div id="loading-state" class="loading hidden">
+          <span class="spinner"></span>
+          <span>Loading...</span>
+        </div>
+        
+        <div id="empty-state" class="empty-state hidden">
+          <p>No bookmarks yet</p>
+          <p class="hint">Save posts from Instagram to see them here</p>
+        </div>
+        
+        <ul id="bookmarks-list" class="bookmarks-list"></ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span id="total-count">0 bookmarks</span>
+    </footer>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
